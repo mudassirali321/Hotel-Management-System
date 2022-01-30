@@ -1,0 +1,13 @@
+.dropdown-menu:hover{
+    
+}
+
+.dropdown-item:hover {
+    background: rgba(253, 187, 45, 1);
+    
+}
+
+.dropdown-item {
+    color: rgba(253, 187, 45, 1);
+    font-weight: 700;
+}

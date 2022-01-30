@@ -1,0 +1,100 @@
+
+<div class="main-content">
+    <div fxLayout="row wrap" class="divItemCategory">
+        <div>
+            <button mat-raised-button [class.selected-category]="selectedCategoryId == -1" class="btnfCategory" color="primary"
+                    (click)="getItemsOnCategoryId(-1)">
+                Show All Items
+            </button>
+        </div>
+        <div *ngFor="let fCategory of categoryList" >
+            <button mat-raised-button class="btnfCategory" [class.selected-category]="selectedCategoryId == fCategory.id" color="primary"
+                    (click)="getItemsOnCategoryId(fCategory.id) ">
+                {{fCategory.title}}
+            </button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <mat-card>
+            <div fxLayoutAlign="end start" class="divReviewCard">
+                <button mat-raised-button class="btnReviewCard" [disabled]="_orderService.OrderItems.length===0"
+                        (click)="btnReviewCard()">
+                    {{_orderService.OrderItems.length}}&nbsp; Review Cart &nbsp;
+                </button>
+            </div>
+
+
+            <!--<div class="row">
+         <div class="col-md-12">
+              <div class="form-group ">
+                   <div class="form-outline">
+                        <input type="search" #search mat-button placeholder="Search Food Item."
+                             (keyup)="applyFilter($event)" />
+                   </div>
+              </div>
+         </div>
+    </div>-->
+           
+            <div fxLayout="row" *ngIf="Items==0" class="noRecordFound">
+                <span *ngIf="isGridDataLoading"> Loading...</span>
+                <span *ngIf="!isGridDataLoading" >No Item Found</span>
+            </div>
+            <div fxLayout="row wrap">
+                <div *ngFor="let oList of Items" class="divItem" fxFlex.lt-sm="100">
+                    <div class="card card-chart" fxFlex.lt-sm="100">
+                        <div class="card-header ">
+                            <div class="imagediv" [class.selectedImage]="selectedImage == 1">
+                                <img class="imagesStyle" [src]="oList.imageUrl">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" style="height:60px">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <span class="chic">
+                                        <h4 class="card-title">{{oList.title}}</h4>
+                                    </span>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+ 
+                                        <h4 class="price">
+                                            {{oList.salePrice }} Pkr.
+                                        </h4>
+                                    
+                                </div>
+                            </div>
+                            <br />
+                            <div fxLayout="row" style="height:70px">
+                                <p class="description">{{oList.description}}</p>
+                            </div>
+                            <!--<p class="card-category">
+                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span>
+                        increase in today sales.
+                    </p>-->
+                            <div fxLayout="row">
+                                <div fxFlex="50%">
+                                    <p class="specialOffer"></p>
+                                </div>
+                                <div fxFlex="50%">
+                                    <button mat-flat-button class="btnOrder"
+                                            (click)="btnOrderFood(oList,true)">
+                                        Order
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </mat-card>
+    </div>
+</div>

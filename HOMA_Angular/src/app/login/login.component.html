@@ -1,0 +1,59 @@
+<div class="logIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+
+                <div class="card-body">
+                    <h4 class="text-center mb-3">{{ "Log In" }}</h4>
+                    <form novalidate autocomplete="off" #loginForm="ngForm" (ngSubmit)="login()">
+                        <mat-label>UserName Or Email</mat-label>
+                        <div class="divUserName">
+                            <input type="text"  name="userNameOrEmailAddress" 
+                                   [(ngModel)]="authService.authenticateModel.userNameOrEmailAddress"
+                                   [placeholder]="'UserNameOrEmail' " required #userNameOrEmailAddressModel="ngModel"
+                                   #userNameOrEmailAddressEl />
+                        </div>
+                         
+                        <mat-label>Password</mat-label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="password"
+                                       [(ngModel)]="authService.authenticateModel.password" [placeholder]="'Password' " required
+                                       maxlength="32" #passwordModel="ngModel" #passwordEl />
+
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="rememberMe" name="rememberMe"
+                                           [(ngModel)]="authService.rememberMe" />
+                                    <label for="rememberMe" class="custom-control-label">
+                                        {{ "RememberMe" }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" mat-raised-button color="primary"
+                                        [disabled]="!loginForm.form.valid || submitting">
+                                    {{ "Log In" }}
+
+
+                                </button>
+
+
+                            </div>
+                        </div>
+                        <!--<a href="#">Forget Your Password</a><br/>
+    <a href="#">Dont Have an Account</a>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+                <!-- <p *ngIf="isSelfRegistrationAllowed" class="mb-1">
+                     <a [routerLink]="['../register']">
+                          <i class="fa fa-plus-circle"></i> {{ "Register" | localize }}
+                     </a>
+                </p> -->
