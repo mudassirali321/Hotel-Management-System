@@ -16,12 +16,14 @@ namespace OPS.HotelService.OrderService
         private readonly IRepository<OrderDetail> _orderDetailRepository;
         private readonly IRepository<Order> _orderRepository;
         private readonly IRepository<Tables> _tableRepository;
+        private readonly IRepository<Demo> _demoreposotry;
 
-        public OrderService(IRepository<OrderDetail> orderDetail, IRepository<Order> order, IRepository<Tables> tableRepository)
+        public OrderService(IRepository<OrderDetail> orderDetail, IRepository<Order> order, IRepository<Tables> tableRepository, IRepository<Demo> demoreposotry)
         {
             this._orderDetailRepository = orderDetail;
             this._orderRepository = order;
             this._tableRepository = tableRepository;
+            _demoreposotry = demoreposotry;
         }
 
         [HttpPost]
@@ -334,6 +336,8 @@ namespace OPS.HotelService.OrderService
             return null;
 
         }
+
+
 
 
     }

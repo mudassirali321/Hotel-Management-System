@@ -23,6 +23,7 @@ namespace OPS.EntityFrameworkCore
         public DbSet<AddEmployee> AddEmployee { get; set; }
         public DbSet<OrderStatus> OrderStatus { get; set; }
         public DbSet<Units> Units { get; set; }
-   
+        public DbSet<Demo> Demos { get; set; }
+
     }
 }
