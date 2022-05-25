@@ -8,6 +8,9 @@ import { resolve } from 'q';
 
 @Injectable()
 export class AppService {
+  public currentUserId: string ;
+  public currentUser: any ;
+
   public visitedScreens: string = "";
     public userId: string = null;// 'admin';
     orderStatusList = [{ id: "O", name: "Open", displaySeq: 1 },

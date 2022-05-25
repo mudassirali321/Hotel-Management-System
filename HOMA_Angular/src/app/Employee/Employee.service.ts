@@ -32,8 +32,9 @@ export class EmployeeService {
     // this.reqOptions = new RequestOptions({ headers: this.reqHeaders });
 
 
-  }
+  } 
 //Get All Employee
+
     getAllEmployees(): Observable<IEmployee[]> {//IEmployee[]
     
     let url: string = this.apiUrl + 'EmployeeService/getAllEmployee' ;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
+using Abp.Runtime.Session;
 using Abp.UI;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -42,6 +43,7 @@ namespace OPS.HotelService.Employee
         [HttpGet]
         public async Task<List<EmployeeDto>> getAllEmployee()
         {
+        
             var query = await _userRepository.GetAll().Select(x => new EmployeeDto
             {
                 Id = x.Id,

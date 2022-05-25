@@ -23,6 +23,7 @@ export class AuthenticateModel implements IAuthenticateModel {
     }
 
     init(data?: any) {
+        debugger;
         if (data) {
             this.userNameOrEmailAddress = data["userNameOrEmailAddress"];
             this.password = data["password"];
@@ -72,6 +73,8 @@ export class AuthenticateResultModel implements IAuthenticateResultModel {
     encryptedAccessToken: string | undefined;
     expireInSeconds: number;
     userId: number;
+    user: any;
+
 
     constructor(data?: IAuthenticateResultModel) {
         if (data) {

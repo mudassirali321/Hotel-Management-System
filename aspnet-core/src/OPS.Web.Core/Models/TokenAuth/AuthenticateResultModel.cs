@@ -1,4 +1,6 @@
-﻿namespace OPS.Models.TokenAuth
+﻿using OPS.Authorization.Users;
+
+namespace OPS.Models.TokenAuth
 {
     public class AuthenticateResultModel
     {
@@ -9,5 +11,8 @@
         public int ExpireInSeconds { get; set; }
 
         public long UserId { get; set; }
+        public User User  { get; set; }
+
+
     }
 }

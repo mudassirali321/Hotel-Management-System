@@ -4,11 +4,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { NotificationService } from '../Services/notification.service';
+import { AppService } from 'app/shared/services/app.service';
 
 
 
 @Injectable()
 export class AppAuthService {
+    UserInfo: any;
+
     authenticateModel: AuthenticateModel;
     authenticateResult: AuthenticateResultModel;
     rememberMe: boolean;
@@ -16,15 +19,17 @@ export class AppAuthService {
     constructor(
         private _tokenAuthService: TokenAuthServiceProxy,
         private _router: Router,
-        private _notificationService: NotificationService
+        private _notificationService: NotificationService,
+        private _appService: AppService
        
     )
     {
         this.clear();
     }
-
+    
 
     authenticate(finallyCallback?: () => void): void {
+        debugger;
         finallyCallback = finallyCallback || (() => { });
 
         this._tokenAuthService
@@ -39,7 +44,7 @@ export class AppAuthService {
             });
     }
 
-    private processAuthenticateResult(
+    public processAuthenticateResult(
         authenticateResult
     ) {
         this.authenticateResult = authenticateResult.result;
@@ -54,7 +59,14 @@ export class AppAuthService {
         //     );
         // } 
          if (this.authenticateResult.accessToken) {
+             debugger;
             // Successfully logged i
+     
+        this._appService.currentUser = this.authenticateResult.user;
+         
+
+        
+
              this.login(
                 this.authenticateResult.accessToken,
                 this.authenticateResult.encryptedAccessToken,
@@ -81,10 +93,12 @@ export class AppAuthService {
             ? new Date(new Date().getTime() + 1000 * expireInSeconds)
             : undefined;
         localStorage.setItem('auth_token', accessToken);
+       
+
         
         this._notificationService.success('Successfully Log In');
         // localStorage.setItem('tokenExpireDate',tokenExpireDate );
-        debugger;
+        
         this._router.navigate(['/dashboard']);
         //this._tokenService.setToken(accessToken, tokenExpireDate);
         
