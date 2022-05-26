@@ -41,6 +41,7 @@ export class OrdersComponent implements OnInit {
     ngOnInit(): void {
         this.loadBasicData();
         this.loadAllActiveItems();
+       
     }
 
     loadBasicData() {

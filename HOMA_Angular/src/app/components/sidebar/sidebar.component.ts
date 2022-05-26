@@ -54,6 +54,8 @@ export const ROUTES_Chef: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
+  public userInfo : any;
+  
 
   constructor(
 
@@ -63,22 +65,23 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
 
-      var userInfo =this._appService.currentUser;
-      var Role = userInfo.employeeType;
+       this.userInfo =this._appService.currentUser;
+      //this._appService.role = this.userInfo.employeeType;
+      var role =this.userInfo.employeeType;
     
     //this.menuItems = ROUTES.filter(menuItem => menuItem.role.find(x=>x=='Cheif'));
-    if(Role=='Chef'){
+    if(role=='Chef'){
       this.menuItems = ROUTES_Chef.filter(menuItem => menuItem);
     }
-    if(Role=='Admin'){
+    if(role=='Admin'){
 
       this.menuItems = ROUTES_Admin.filter(menuItem => menuItem);
     }
-    if(Role=='Account'){
+    if(role=='Account'){
 
       this.menuItems = ROUTES_Account.filter(menuItem => menuItem);
     }
-    if(Role=='Waiter'){
+    if(role=='Waiter'){
 
       this.menuItems = ROUTES_Waiter.filter(menuItem => menuItem);
     }

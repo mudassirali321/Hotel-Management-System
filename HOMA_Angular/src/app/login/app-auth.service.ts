@@ -10,7 +10,7 @@ import { AppService } from 'app/shared/services/app.service';
 
 @Injectable()
 export class AppAuthService {
-    UserInfo: any;
+    userInfo: any;
 
     authenticateModel: AuthenticateModel;
     authenticateResult: AuthenticateResultModel;
@@ -59,7 +59,7 @@ export class AppAuthService {
         //     );
         // } 
          if (this.authenticateResult.accessToken) {
-             debugger;
+           
             // Successfully logged i
      
         this._appService.currentUser = this.authenticateResult.user;
@@ -98,8 +98,25 @@ export class AppAuthService {
         
         this._notificationService.success('Successfully Log In');
         // localStorage.setItem('tokenExpireDate',tokenExpireDate );
-        
-        this._router.navigate(['/dashboard']);
+        this.userInfo =this._appService.currentUser;
+        var role = this.userInfo.employeeType;
+
+        if(role=="Admin"){
+          this._router.navigate(['/dashboard']);
+            }
+
+        if(role=="Chef"){
+            this._router.navigate(['/Kitchen']);
+            }
+
+        if(role=="Waiter"){
+            this._router.navigate(['/orders']);
+            }
+        if(role=="Account"){
+            this._router.navigate(['/dashboard']);
+            }
+    
+
         //this._tokenService.setToken(accessToken, tokenExpireDate);
         
     }
