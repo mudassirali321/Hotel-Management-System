@@ -21,6 +21,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+**/logs
+**/Logs
 
 
 
@@ -798,6 +800,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+logs/
+Logs/
+aspnet-core/src/OPS.Web.Host/App_Data/Logs/
 
 
 node_modules
