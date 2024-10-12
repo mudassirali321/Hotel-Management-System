@@ -23,6 +23,7 @@ import { IOrder } from '../../shared/models/IOrders';
 
 export class AllOrdersDialogComponent implements OnInit {
     orderId: number;
+    showInvoice: boolean = true;
     private _route: ActivatedRoute;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -71,6 +72,10 @@ export class AllOrdersDialogComponent implements OnInit {
         this.getOrderDetails();
     }
 
+    printInvoice() {
+        this.showInvoice = !this.showInvoice;
+        window.print();
+    }
     refreshGrid(): void {
         this.isGridDataLoading = true;
         this._kitchenService.getOrderDetailOnId(this.orderId)

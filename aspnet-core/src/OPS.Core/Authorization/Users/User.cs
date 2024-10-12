@@ -19,6 +19,8 @@ namespace OPS.Authorization.Users
         public string EmployeeType { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
+        public string FatherName { get; set; }
+
         public static User CreateTenantAdminUser(int tenantId, string emailAddress)
         {
             var user = new User

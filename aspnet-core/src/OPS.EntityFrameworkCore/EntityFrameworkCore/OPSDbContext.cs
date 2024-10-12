@@ -24,6 +24,11 @@ namespace OPS.EntityFrameworkCore
         public DbSet<OrderStatus> OrderStatus { get; set; }
         public DbSet<Units> Units { get; set; }
         public DbSet<Demo> Demos { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<AddPatient1> AddPatient1 { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Disease> Diseases { get; set; }
+        public DbSet<Crud> Cruds { get; set; }
 
     }
 }

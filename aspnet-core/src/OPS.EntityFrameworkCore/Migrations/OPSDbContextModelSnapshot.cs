@@ -1446,6 +1446,9 @@ namespace OPS.Migrations
                     b.Property<string>("EmployeeType")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FatherName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
@@ -1534,6 +1537,51 @@ namespace OPS.Migrations
                     b.HasIndex("TenantId", "NormalizedUserName");
 
                     b.ToTable("AbpUsers");
+                });
+
+            modelBuilder.Entity("OPS.Crud", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("DeleterUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cruds");
                 });
 
             modelBuilder.Entity("OPS.MultiTenancy.Tenant", b =>
@@ -1654,6 +1702,69 @@ namespace OPS.Migrations
                     b.ToTable("AddEmployee");
                 });
 
+            modelBuilder.Entity("OPS.OPS_Models.AddPatient1", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("Age")
+                        .HasMaxLength(10)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cell")
+                        .HasMaxLength(14)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cnic")
+                        .HasMaxLength(14)
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("DeleterUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Disease")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("FatherName")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("HasPhoto")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("PatientName")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Patient1");
+                });
+
             modelBuilder.Entity("OPS.OPS_Models.Demo", b =>
                 {
                     b.Property<int>("Id")
@@ -1676,6 +1787,117 @@ namespace OPS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Demos");
+                });
+
+            modelBuilder.Entity("OPS.OPS_Models.Disease", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("DeleterUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("HasPhoto")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Symptoms")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Diseases");
+                });
+
+            modelBuilder.Entity("OPS.OPS_Models.Doctor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("Age")
+                        .HasMaxLength(10)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cell")
+                        .HasMaxLength(14)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cnic")
+                        .HasMaxLength(14)
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("DeleterUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FatherName")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("HasPhoto")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Specialist")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("OPS.OPS_Models.Items", b =>
@@ -1915,6 +2137,39 @@ namespace OPS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrdersStatus");
+                });
+
+            modelBuilder.Entity("OPS.OPS_Models.Patient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cell")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Cnic")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Disease")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FatherName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("OPS.OPS_Models.Tables", b =>

@@ -33,6 +33,8 @@ import { KitchenDialogComponent } from "./Kitchen/Kitchen-dialog/Kitchen-dialog.
 import { EmployeeComponent } from "./Employee/Employee.component";
 import { EmployeeDialogComponent } from "./Employee/Employee-dialog/Employee-dialog.component";
 import { ItemComponent } from "./AddItem/Item.component";
+import { CrudDialogComponent } from "./Crud/crud-dialog/crud-dialog.component";
+import { CrudComponent } from "./Crud/crud.component";
 import { ItemDialogComponent } from "./AddItem/Item-dialog/Item-dialog.component";
 import { ItemCategoryComponent } from "./ItemCategory/ItemCategory.component";
 import { ItemCategoryDialogComponent } from "./ItemCategory/ItemCategory-dialog/ItemCategory-dialog.component";
@@ -50,6 +52,14 @@ import { TokenAuthServiceProxy } from "./shared/services/service-proxies";
 import { AuthInterceptor } from "./AuthGuard/auth.interceptor";
 import { AuthGuard } from "./AuthGuard/auth.guard";
 import { PageNotFoundComponent } from "./PageNotFound/page-not-found/page-not-found.component";
+// import { PatientComponent } from './Patient/Patient.component';
+// import { Patient1Component } from './patient1/patient1.component';
+// import { DoctorComponent } from './doctor/doctor.component';
+// import { DiseaseComponent } from './disease/disease.component';
+import { Patient1DialogComponent } from "./patient1/patient1-dialog/patient1-dialog.component";
+import { DoctorDialogComponent } from "./doctor/doctor-dialog/doctor-dialog.component";
+import { DiseaseDialogComponent } from "./disease/disease-dialog/disease-dialog.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -57,7 +67,7 @@ import { PageNotFoundComponent } from "./PageNotFound/page-not-found/page-not-fo
     ReactiveFormsModule,
     HttpClientModule,
     ComponentsModule,
-    RouterModule,
+    RouterModule,    MatFormFieldModule,
     AppRoutingModule,
     MatDialogModule,
     MatCardModule,
@@ -68,7 +78,7 @@ import { PageNotFoundComponent } from "./PageNotFound/page-not-found/page-not-fo
         })
         */
   ],
-  declarations: [
+  declarations: [		
     AppComponent,
     AdminLayoutComponent,
     MessageDialogComponent,
@@ -76,6 +86,7 @@ import { PageNotFoundComponent } from "./PageNotFound/page-not-found/page-not-fo
     OrdersComponent,
     OrdersDialogComponent,
     CardComponent,
+    // DoctorComponent,
     AllOrdersComponent,
     AllOrdersDialogComponent,
     AccountsComponent,
@@ -84,7 +95,9 @@ import { PageNotFoundComponent } from "./PageNotFound/page-not-found/page-not-fo
     KitchenDialogComponent,
     TableComponent,
     TableDialogComponent,
+    CrudDialogComponent,
     EmployeeComponent,
+    CrudComponent,
     EmployeeDialogComponent,
     ItemComponent,
     ItemDialogComponent,
@@ -93,8 +106,14 @@ import { PageNotFoundComponent } from "./PageNotFound/page-not-found/page-not-fo
     UnitComponent,
     UnitDialogComponent,
     LoginComponent,
-    PageNotFoundComponent,
-  ],
+    PageNotFoundComponent
+      // Patient1Component, Patient1DialogComponent,
+      // PatientComponent,
+      // DoctorComponent,
+      // DoctorDialogComponent,
+      // DiseaseDialogComponent,
+      // DiseaseComponent
+   ],
   entryComponents: [MessageDialogComponent],
   providers: [
     OrderService,

@@ -11,6 +11,14 @@
     <RootNamespace>OPS</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.4" />
+    <PackageReference Include="Microsoft.Owin.Cors" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\OPS.Core\OPS.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 </Project>

@@ -8,6 +8,6 @@ namespace OPS.HotelService.Project_Paths
 {
   public  sealed class Project_Paths
     {
-        public const string Path_ItemsPhotos = "C:\\Final Year Project\\Final Year Project HOMA\\Hotel_Api\\aspnet-core\\src\\OPS.Web.Host\\wwwroot\\ItemImages";
+        public const string Path_ItemsPhotos = "E:\\Projects\\HOMA\\HOMA\\aspnet-core\\src\\OPS.Web.Host\\wwwroot\\ItemImages";
     }
 }

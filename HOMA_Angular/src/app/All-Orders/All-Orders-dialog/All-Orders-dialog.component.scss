@@ -1,5 +1,51 @@
 @import "src/assets/scss/variables";
+.invoice {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
 
+.invoice-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.invoice-details {
+  font-size: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+}
 //.desg{
 .btnOrderFood {
   background-color: rgba(253, 187, 45, 1);
@@ -13,7 +59,32 @@
 table {
   width: 100%;
 }
+@page {
+  margin: 0;
+  size: auto; /* Use 'auto' to allow content to determine page size */
+}
 
+@media print {
+  /* Define styles for the printed version */
+  
+  /* Remove margins */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove header and footer */
+ 
+  /* Force page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* You can hide or modify elements for printing as needed */
+  .no-print {
+    display: none;
+  }
+}
 .mat-table {
   overflow: auto;
   /*max-height: 500px;*/

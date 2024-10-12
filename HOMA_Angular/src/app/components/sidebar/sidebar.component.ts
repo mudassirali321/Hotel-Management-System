@@ -17,7 +17,19 @@ export const ROUTES_Admin: RouteInfo[] = [
     class: "",
     role: [],
   },
+  // {
+  //   path: "/Crud",
+  //   title: "Crud",
+  //   icon: "account_balance_wallet",
+  //   class: "",
+  //   role: [],
+  // },
   { path: "/Employee", title: "Employee", icon: "person", class: "", role: [] },
+ 
+  // { path: "/Patient", title: "Patient", icon: "Patient", class: "", role: [] },
+  // { path: "/Patient1", title: "patient1", icon: "patient1", class: "", role: [] },
+  // { path: "/doctor", title: "doctor", icon: "doctor", class: "", role: [] },
+  // { path: "/disease", title: "disease", icon: "disease", class: "", role: [] },
   {
     path: "/ItemCategory",
     title: "Item Category",
@@ -41,6 +53,7 @@ export const ROUTES_Admin: RouteInfo[] = [
     class: "",
     role: [],
   },
+  
   {
     path: "/all-orders",
     title: "Admin(All Orders)",
@@ -66,6 +79,8 @@ export const ROUTES_Account: RouteInfo[] = [
     class: "",
     role: [],
   },
+  { path: "/Employee", title: "Employee", icon: "person", class: "", role: [] },
+  
   { path: "/Employee", title: "Employee", icon: "person", class: "", role: [] },
   {
     path: "/ItemCategory",
@@ -142,7 +157,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.userInfo = this._appService.currentUser;
     //this._appService.role = this.userInfo.employeeType;
-    var role = this.userInfo.employeeType;
+    var role = this.userInfo?.employeeType;
 
     //this.menuItems = ROUTES.filter(menuItem => menuItem.role.find(x=>x=='Cheif'));
     if (role == "Chef") {

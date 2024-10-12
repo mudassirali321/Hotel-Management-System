@@ -32,10 +32,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Abp.Castle.Log4Net" Version="6.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Owin.Cors" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\swagger\ui\index.html">

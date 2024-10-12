@@ -1,0 +1,232 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-body">
+                      <form [formGroup]='form1' novalidate>
+                          <mat-card style='margin-top:10px;'>
+                              <div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                            <mat-label>PatientName</mat-label>
+                                              <input formControlName="PatientName" matInput>
+                                              <mat-error *ngFor="let validation of validation_messages.PatientName">
+                                                  <mat-error class="error-message"
+                                                      *ngIf="form1.get('PatientName').hasError(validation.type)
+                                                                                                               ">
+                                                      {{validation.message}}
+                                                  </mat-error>
+                                              </mat-error>
+                                          </mat-form-field>
+                                      </div>
+                                       <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <mat-label>Father Name</mat-label>
+                                              <input formControlName='FatherName' matInput>
+                                              <mat-error *ngFor="let validation of validation_messages.FatherName">
+                                                <mat-error class="error-message"
+                                                    *ngIf="form1.get('FatherName').hasError(validation.type)
+                                                                                               ">
+                                                    {{validation.message}}
+                                                </mat-error>
+                                            </mat-error>
+                                          </mat-form-field>
+                                      </div>
+                                  </div>
+                                 <div class="row">
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <mat-label>Cell</mat-label>
+                                              <input formControlName='Cell' matInput>
+                                              <mat-error *ngFor="let validation of validation_messages.Cell">
+                                                  <mat-error class="error-message"
+                                                      *ngIf="form1.get('Cell').hasError(validation.type)
+                                                                                                                                    ">
+                                                      {{validation.message}}
+                                                  </mat-error>
+                                              </mat-error>
+                                          </mat-form-field>
+                                      </div>
+                                     <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <mat-label>Age</mat-label>
+                                              <input  type="Age" formControlName='Age' matInput>
+                                              <mat-error *ngFor="let validation of validation_messages.Age">
+                                                <mat-error class="error-message"
+                                                    *ngIf="form1.get('Age').hasError(validation.type)
+                                                                                              ">
+                                                    {{validation.message}}
+                                                </mat-error>
+                                            </mat-error>
+                                            </mat-form-field>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                    
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <mat-label>Address</mat-label>
+                                              <input formControlName='Address' matInput placeholder="Address" type="Address">
+                                              <mat-error *ngFor="let validation of validation_messages.Address">
+                                                <mat-error class="error-message"
+                                                    *ngIf="form1.get('Address').hasError(validation.type)
+                                                                                              ">
+                                                    {{validation.message}}
+                                                </mat-error>
+                                            </mat-error>
+                                          </mat-form-field>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Cnic</mat-label>
+                                            <input formControlName='Cnic' matInput placeholder="Cnic" type="Cnic">
+                                            <mat-error *ngFor="let validation of validation_messages.Cnic">
+                                                <mat-error class="error-message"
+                                                    *ngIf="form1.get('Cnic').hasError(validation.type)
+                                                                                              ">
+                                                    {{validation.message}}
+                                                </mat-error>
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <mat-label>Disease</mat-label>
+                                              <mat-select formControlName="Disease"> 
+                                                <mat-option value="Ortho">SKin Alergy</mat-option>
+                                                <mat-option value="Neuro">Back Pain</mat-option>
+                                                  </mat-select>
+                                                  <mat-error *ngFor="let validation of validation_messages.Disease">
+                                                    <mat-error class="error-message"
+                                                        *ngIf="form1.get('Disease').hasError(validation.type)
+                                                                                                  ">
+                                                        {{validation.message}}
+                                                    </mat-error>
+                                                </mat-error>
+                                          </mat-form-field>
+                                      </div>
+
+                                      <!-- <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <mat-label>Cnic</mat-label>
+                                              <input formControlName='Cnic' type="Cnic" matInput>
+                                              <mat-error *ngFor="let validation of validation_messages.Cnic">
+                                                  <mat-error class="error-message"
+                                                      *ngIf="form1.get('password').hasError(validation.type)
+                                                            ">
+                                                      {{validation.message}}
+                                                  </mat-error>
+                                              </mat-error>
+                                          </mat-form-field>
+                                       </div>-->
+
+                                  </div>
+
+
+                                  <div fxLayout="row" fxLayoutGap="9px" fxLayoutAlign="end center">
+                                      <button mat-raised-button color="warn" >
+                                          Cancel
+                                      </button>
+                                      <button mat-raised-button (click)="savePatient()">
+                                          Save
+                                      </button>
+                                       <button mat-raised-button (click)="loadPatients()">
+                                        Show Data
+                                    </button>  
+
+                                  </div>
+
+
+
+
+                              </div>
+                          </mat-card>
+                      </form>
+
+
+
+
+
+
+
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+<!-- 
+<table mat-table  class="mat-elevation-z8"> 
+
+
+    <ng-container matColumnDef="FatherName">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> </td>
+    </ng-container>
+  
+ 
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>PatientName</th>
+        <th>FatherName</th>
+        <th>Cell</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Disease</th>
+        <th>Cnic</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <tr *ngFor="let item of data">
+        <td>{{ item.id}}</td>
+        <td>{{ item.PatientName}}</td>
+        <td>{{ item.FatherName}}</td>
+        <td>{{ item.Cell}}</td>
+        <td>{{ item.Age}}</td>
+        <td>{{ item.Address}}</td>
+        <td>{{ item.Disease}}</td>
+        <td>{{ item.Cnin}}</td>
+        <!-- <td>{{ item.price | currency }}</td> -->
+      </tr>
+    </tbody>
+  </table>
+
+
+<table >
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element">hi</td>
+  </ng-container>
+</table>

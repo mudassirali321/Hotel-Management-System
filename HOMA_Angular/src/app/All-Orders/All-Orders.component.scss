@@ -6,6 +6,28 @@ table {
   width: 100%;
 }
 
+@media print {
+  /* Define styles for the printed version */
+  
+  /* Remove margins */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove header and footer */
+ 
+  /* Force page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* You can hide or modify elements for printing as needed */
+  .no-print {
+    display: none;
+  }
+}
+
 .mat-table {
   overflow: auto;
   /*max-height: 500px;*/

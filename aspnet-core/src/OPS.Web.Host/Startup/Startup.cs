@@ -19,7 +19,7 @@ using Abp.Json;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
-
+using Owin;
 namespace OPS.Web.Host.Startup
 {
     public class Startup
@@ -63,6 +63,7 @@ namespace OPS.Web.Host.Startup
                     _defaultCorsPolicyName,
                     builder => builder
                         .WithOrigins(
+                            
                             // App:CorsOrigins in appsettings.json can contain more than one address separated by comma.
                             _appConfiguration["App:CorsOrigins"]
                                 .Split(",", StringSplitOptions.RemoveEmptyEntries)

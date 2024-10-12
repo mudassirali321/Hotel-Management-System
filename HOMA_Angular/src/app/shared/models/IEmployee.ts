@@ -10,5 +10,12 @@ gender: string;
 isActive: boolean;
 hasPhoto: boolean;
 password:string;
+Name: string;
+FatherName: string;
+Cell: number;
+Age: number;
+Address: string;
+Specialist: string;
+Cnic: number;
 
  }
